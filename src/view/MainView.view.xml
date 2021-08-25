@@ -2,7 +2,7 @@
 	xmlns="sap.m">
 	<App id="idAppControl">
 		<pages>
-			<Page title="{i18n>title}">
+			<Page title="{i18n>mainView.title}">
 				<content>
 					<FlexBox direction="Column" alignItems="Start">
 						<!-- i18n text from ressource bundle -->
@@ -19,7 +19,7 @@
 						core:require="{ formatMessage: 'sap/base/strings/formatMessage' }"
 						text="{
 							parts: [
-								'i18n>buttonTextPlaceholerXML',
+								'i18n>mainView.content.buttonTextPlaceholerXML',
 								'xmlPlaceholderData>/randomNumber'
 							],
 							formatter: 'formatMessage'

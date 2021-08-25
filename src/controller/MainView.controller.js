@@ -7,38 +7,38 @@ sap.ui.define(
       onInit: function () {
         ///// Example of simple i18n controller setting //////
         // get ressource bundle
-        let oResourceBunde = this.getOwnerComponent()
+        const resourceBunde = this.getOwnerComponent()
           .getModel("i18n")
           .getResourceBundle();
         // get text from ressource bundle
-        let sButtonText = oResourceBunde.getText(
+        let sButtonText = resourceBunde.getText(
           "controller.mainView.buttonText"
         );
         // get button
-        let oButton = this.byId("controllerI18nText");
+        const button = this.byId("controllerI18nText");
         //set text to button
-        oButton.setText(sButtonText);
+        button.setText(sButtonText);
 
         ///// Example of i18n placeholer usage //////
         // generate two random numbers
-        let iRandomNumberOne = Math.floor(Math.random() * (200 - 100) + 100);
-        let iRandomNumberTwo = Math.floor(Math.random() * (50 - 1) + 1);
-        let sButtonTextWithPlaceholer = oResourceBunde.getText(
-          "buttonTextPlaceholer",
-          [iRandomNumberOne, iRandomNumberTwo]
+        let randomNumberOne = Math.floor(Math.random() * (200 - 100) + 100);
+        let randomNumberTwo = Math.floor(Math.random() * (50 - 1) + 1);
+        let buttonTextWithPlaceholer = resourceBunde.getText(
+          "controller.mainView.buttonTextPlaceholer",
+          [randomNumberOne, randomNumberTwo]
         );
         // get button
-        let oButtonPlaceholder = this.byId("controllerI18nPlaceholderText");
+        const buttonPlaceholder = this.byId("controllerI18nPlaceholderText");
         //set text to button
-        oButtonPlaceholder.setText(sButtonTextWithPlaceholer);
+        buttonPlaceholder.setText(buttonTextWithPlaceholer);
 
         ///// Example of i18n placeholer usage with xml usage //////
         //creating JSON Model with random number
-        var oData = {
+        let data = {
           randomNumber: Math.floor(Math.random() * (9999 - 8999) + 8999)
         };
-        var oModel = new JSONModel(oData);
-        this.getView().setModel(oModel, "xmlPlaceholderData");
+        let jsonModel = new JSONModel(data);
+        this.getView().setModel(jsonModel, "xmlPlaceholderData");
       }
     });
   }
