@@ -1,0 +1,13 @@
+<mvc:View controllerName="ui5.sandbox.controller.MainView" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<Button text="Test button">
+					</Button>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

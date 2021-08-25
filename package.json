@@ -1,0 +1,14 @@
+{
+  "name": "ui5-sandbox",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js localhost 8080"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  }
+}

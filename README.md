@@ -1,1 +1,2 @@
-# UI5-Best-Practice-samples
+# codesandbox-ui5-base
+Created with CodeSandbox

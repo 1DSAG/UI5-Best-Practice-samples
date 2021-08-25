@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+
+    <title>UI5 Sandbox</title>
+
+    <script
+      id="sap-ui-bootstrap"
+      src="https://sapui5.netweaver.ondemand.com/resources/sap-ui-core.js"
+      data-sap-ui-async="true"
+      data-sap-ui-libs="sap.m"
+      data-sap-ui-theme="sap_fiori_3"
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-resourceroots='{"ui5.sandbox": "./"}'
+    ></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script>
+      sap.ui.getCore().attachInit(function () {
+        new sap.m.Shell({
+          app: new sap.ui.core.ComponentContainer({
+            height: "100%",
+            name: "ui5.sandbox"
+          })
+        }).placeAt("content");
+      });
+    </script>
+  </head>
+
+  <body class="sapUiBody" id="content"></body>
+</html>
