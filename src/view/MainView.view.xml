@@ -1,11 +1,30 @@
-<mvc:View controllerName="ui5.sandbox.controller.MainView" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+<mvc:View controllerName="ui5.sandbox.controller.MainView" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" displayBlock="true"
 	xmlns="sap.m">
 	<App id="idAppControl">
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
-					<Button text="Test button">
-					</Button>
+					<FlexBox direction="Column" alignItems="Start">
+						<!-- i18n text from ressource bundle -->
+						<Button text="{i18n>buttonText}"/>	
+						<!-- i18n text from ressource bundle with point notation-->
+						<Button text="{i18n>mainView.content.buttonText}"/>
+						<!-- i18n text set in controller -->
+						<Button id="controllerI18nText"/>
+						<!-- i18n placeholder text set in controller  -->
+						<Button id="controllerI18nPlaceholderText"/>
+						<!-- i18n placeholder text set in directly in xml view  -->
+						<!-- text has two parts, first part is i18n text, parts after that are placeholder values -->
+						<Button 
+						core:require="{ formatMessage: 'sap/base/strings/formatMessage' }"
+						text="{
+							parts: [
+								'i18n>buttonTextPlaceholerXML',
+								'xmlPlaceholderData>/randomNumber'
+							],
+							formatter: 'formatMessage'
+						}"/>
+					</FlexBox>
 				</content>
 			</Page>
 		</pages>
