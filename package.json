@@ -6,8 +6,8 @@
     "start": "nodemon app.js localhost 8080"
   },
   "dependencies": {
-    "express": "^4.16.4",
-    "livereload": "^0.9.3"
+    "cors-anywhere": "^0.4.4",
+    "express": "^4.16.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
