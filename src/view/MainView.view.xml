@@ -4,8 +4,8 @@
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
-					<Button text="Test button">
-					</Button>
+					<Button text="Test button" press=".dataRequest($event, 1)"/>
+					<Button text="Test button with error" press=".dataRequest($event, 14444444444444)"/>
 				</content>
 			</Page>
 		</pages>
