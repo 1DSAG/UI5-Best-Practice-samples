@@ -6,6 +6,7 @@
     "start": "nodemon app.js localhost 8080"
   },
   "dependencies": {
+    "cors-anywhere": "^0.4.4",
     "express": "^4.16.4"
   },
   "devDependencies": {

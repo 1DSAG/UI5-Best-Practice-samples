@@ -14,6 +14,15 @@
     "sourceTemplate": {
       "id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
       "version": "1.40.12"
+    },
+    "dataSources" : {
+      "northwind" : {
+        "uri": "http://localhost:8080/https://services.odata.org/V2/Northwind/Northwind.svc/",
+		    "type": "OData",
+		    "settings": {
+		      "odataVersion": "2.0"
+		    }
+      }
     }
   },
 
@@ -53,7 +62,10 @@
         "settings": {
           "bundleName": "ui5.sandbox.i18n.i18n"
         }
-      }
+      },
+      "": {
+        "dataSource": "northwind"
+        }
     },
     "resources": {
       "css": [
