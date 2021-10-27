@@ -7,8 +7,8 @@
     "applicationVersion": {
       "version": "1.0.0"
     },
-    "title": "{{appTitle}}",
-    "description": "{{appDescription}}",
+    "title": "{{manifest.appTitle}}",
+    "description": "{{manifest.appDescription}}",
     "resources": "resources.json",
     "ach": "ach",
     "sourceTemplate": {
