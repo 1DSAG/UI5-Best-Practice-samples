@@ -7,9 +7,9 @@
   },
   "dependencies": {
     "cors-anywhere": "^0.4.4",
-    "express": "^4.16.4"
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.14"
   }
 }
