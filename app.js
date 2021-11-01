@@ -1,9 +1,9 @@
-const express = require('express');
-const cors = require('cors');
+const express = require('express'),
+ { createProxyMiddleware } = require('http-proxy-middleware');
 const app = express();
 const port = 3000;
 
-app.use(cors())
 app.use(express.static("src"));
 
-app.listen(port, () => console.log(`UI5 sandbox listening on port ${port}!`));
+app.use('/V2', createProxyMiddleware('/V2', {target: 'https://services.odata.org', changeOrigin: true}));
+app.listen(3000);
