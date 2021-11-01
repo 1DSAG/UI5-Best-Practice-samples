@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"ui5/sandbox/model/models"
-], function (UIComponent, Device, models) {
+	"ui5/sandbox/model/models",
+	"./controller/ErrorHandler"
+], function (UIComponent, Device, models, ErrorHandler) {
 	"use strict";
 
 	return UIComponent.extend("ui5.sandbox.Component", {
@@ -25,6 +26,19 @@ sap.ui.define([
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
+
+			this._oErrorHandler = new ErrorHandler(this);
+		},
+
+		getContentDensityClass : function() {
+			if (!this._sContentDensityClass) {
+				if (!Device.support.touch) {
+					this._sContentDensityClass = "sapUiSizeCompact";
+				} else {
+					this._sContentDensityClass = "sapUiSizeCozy";
+				}
+			}
+			return this._sContentDensityClass;
 		}
 	});
 });
