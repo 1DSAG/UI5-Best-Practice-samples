@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js localhost 8080"
+    "start": "nodemon app.js localhost 8080",
+    "test": "karma start"
   },
   "dependencies": {
     "http-proxy-middleware": "^2.0.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "karma": "^6.3.4",
+    "karma-ui5": "^2.3.4",
+    "karma-chrome-launcher": "^3.1.0",
+    "ui5-middleware-livereload": "^0.5.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.14"
