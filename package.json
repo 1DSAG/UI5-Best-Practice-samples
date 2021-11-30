@@ -3,13 +3,44 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js localhost 8080"
+    "build": "npm-run-all build:ts build:ui5",
+    "build:opt": "npm-run-all build:ts build:ui5:opt",
+    "build:ts": "babel src --out-dir webapp --source-maps inline --extensions \".ts,.js\" --copy-files",
+    "build:ui5": "ui5 build --clean-dest",
+    "build:ui5:opt": "ui5 build self-contained --clean-dest --all",
+    "start:nodemon": "nodemon app.js localhost 3000",
+    "start": "npm-run-all --parallel watch:ts start:nodemon",
+    "watch:ts": "babel src --out-dir webapp --source-maps inline --extensions \".ts,.js\" --copy-files --watch",
+    "start:ui5": "ui5 serve --port 8080 -o index.html",
+    "start:dist": "ui5 serve  --port 8080 -o index.html --config ui5-dist.yaml",
+    "ts-typecheck": "tsc --noEmit",
+    "lint": "eslint src"
   },
   "dependencies": {
     "http-proxy-middleware": "^2.0.1",
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.14",
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@types/openui5": "1.91.0",
+    "@types/jquery": "3.5.1",
+    "@types/qunit": "2.5.4",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "@ui5/cli": "^2.11.1",
+    "babel-preset-transform-ui5": "^7.0.3",
+    "eslint": "^7.28.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^4.3.2",
+    "ui5-middleware-livereload": "^0.5.4"
+  },
+  "ui5": {
+    "dependencies": [
+      "ui5-middleware-livereload"
+    ]
   }
 }
