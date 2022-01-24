@@ -4,8 +4,14 @@
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
-					<Button text="Test button" press=".dataRequest($event, 1)"/>
-					<Button text="Test button with error" press=".dataRequest($event, 14444444444444)"/>
+					<Button text="Show settings" press=".onNavToSettingsPress"/>
+					<Button text="Product Optional Parameter" press=".onNavToSettingsPress"/>
+					<List headerText="{i18n>ListOfAllProducts}" items="{/Products}">
+						<StandardListItem
+						   title="{ProductID} - {ProductName}"
+						   type="Navigation"
+						   press=".onListItemPressed"/>
+					 </List>
 				</content>
 			</Page>
 		</pages>

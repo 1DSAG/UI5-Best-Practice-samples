@@ -15,13 +15,13 @@
       "id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
       "version": "1.40.12"
     },
-    "dataSources" : {
-      "northwind" : {
+    "dataSources": {
+      "northwind": {
         "uri": "/V2/Northwind/Northwind.svc/",
-		    "type": "OData",
-		    "settings": {
-		      "odataVersion": "2.0"
-		    }
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
       }
     }
   },
@@ -65,7 +65,7 @@
       },
       "": {
         "dataSource": "northwind"
-        }
+      }
     },
     "resources": {
       "css": [
@@ -90,6 +90,21 @@
           "name": "RouteView1",
           "pattern": "RouteView1",
           "target": ["TargetView1"]
+        },
+        {
+          "pattern": "settings",
+          "name": "settings",
+          "target": "settings"
+        },
+        {
+          "pattern": "product/{productID}",
+          "name": "product",
+          "target": "product"
+        },
+        {
+          "pattern": "product/{id}/details/:detailId:",
+          "name": "details",
+          "target": "details"
         }
       ],
       "targets": {
@@ -97,8 +112,24 @@
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewName": "MainView"
-        }
+          "viewName": "MainView",
+          "viewLevel": 1
+        },
+        "settings": {
+          "viewId": "Settings",
+          "viewName": "Settings",
+          "viewLevel": 2
+        },
+        "product": {
+          "viewId": "ProductMandatory",
+          "viewName": "ProductMandatory",
+          "viewLevel": 2
+        },
+        "details": {
+         "viewId": "Details",
+         "viewName": "Details",
+         "viewLevel": 3
+       }
       }
     }
   }
