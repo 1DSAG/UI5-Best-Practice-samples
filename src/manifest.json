@@ -121,13 +121,13 @@
           "viewLevel": 2
         },
         "product": {
-          "viewId": "ProductMandatory",
-          "viewName": "ProductMandatory",
+          "viewId": "product",
+          "viewName": "product",
           "viewLevel": 2
         },
         "details": {
-         "viewId": "Details",
-         "viewName": "Details",
+         "viewId": "orderDetails",
+         "viewName": "orderDetails",
          "viewLevel": 3
        }
       }

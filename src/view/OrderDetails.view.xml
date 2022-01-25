@@ -1,0 +1,15 @@
+<mvc:View controllerName="ui5.sandbox.controller.OrderDetails" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m">
+    <Page title="Settings">
+        <content>
+            <VBox >
+                <Text text="OrderID: {OrderID}"></Text>
+                <Text text="ProductID: {ProductID}"></Text>
+                <Text text="UnitPrice: {UnitPrice}"></Text>
+                <Text text="Quantity: {Quantity}"></Text>
+                <Text text="Discount: {Discount}"></Text>
+            </VBox>
+
+        </content>
+    </Page>
+</mvc:View>

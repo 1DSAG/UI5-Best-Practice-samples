@@ -10,7 +10,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function(Controller) {
          _onRouteMatched: function(oEvent) {
             var oArgs = oEvent.getParameter("arguments");
             this.getView().bindElement({
-               path: "/Order_Details(" + oArgs.productID + ")"
+               path: `/Products(${oArgs.id})/Order_Details(OrderID=${oArgs.detailId},ProductID=${oArgs.id})`
             })
          }
 

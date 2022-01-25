@@ -10,25 +10,17 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function(Controller) {
          _onRouteMatched: function(oEvent) {
             var oArgs = oEvent.getParameter("arguments");
             this.getView().bindElement({
-               path: "/Products(" + oArgs.productID + ")"
+               path: `/Products(${oArgs.productID})`
             })
          },
 
-         onGoToOrderDetails: function (oEvent) {
+          onListItemPressed: function (oEvent) {
             var oItem = oEvent.getSource();
             var oContext = oItem.getBindingContext();
             this.getOwnerComponent()
               .getRouter()
-              .navTo("details");
-          },
-
-          onGoToOrderDetailsId: function (oEvent) {
-            var oItem = oEvent.getSource();
-            var oContext = oItem.getBindingContext();
-            this.getOwnerComponent()
-              .getRouter()
-              .navTo("product", {
-                productID: oContext.getProperty("ProductID"),
+              .navTo("details", {
+                id: this.getView().getBindingContext().getObject().ProductID,
                 detailId: oContext.getProperty("OrderID")
               });
           }

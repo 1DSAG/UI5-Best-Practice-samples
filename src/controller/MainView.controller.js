@@ -18,16 +18,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
         .navTo("product", {
           productID: oContext.getProperty("ProductID"),
         });
-    },
-
-    onListItemPressed: function (oEvent) {
-      var oItem = oEvent.getSource();
-      var oContext = oItem.getBindingContext();
-      this.getOwnerComponent()
-        .getRouter()
-        .navTo("product", {
-          productID: oContext.getProperty("ProductID"),
-        });
-    },
+    }
   });
 });
