@@ -37,8 +37,10 @@
 
   "sap.ui5": {
     "rootView": {
-      "viewName": "ui5.sandbox.view.MainView",
-      "type": "XML"
+			"viewName": "ui5.sandbox.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
     },
     "dependencies": {
       "minUI5Version": "1.92.1",
@@ -82,53 +84,66 @@
         "async": true,
         "viewPath": "ui5.sandbox.view",
         "controlAggregation": "pages",
-        "controlId": "idAppControl",
+        "controlId": "app",
         "clearControlAggregation": false
       },
       "routes": [
         {
           "name": "RouteView1",
-          "pattern": "RouteView1",
-          "target": ["TargetView1"]
+          "pattern": "",
+          "viewLevel": 1,
+          "target": "TargetMainView"
         },
         {
           "pattern": "settings",
           "name": "settings",
+          "viewLevel": 2,
           "target": "settings"
         },
         {
           "pattern": "product/{productID}",
-          "name": "product",
-          "target": "product"
+          "name": "productMandatory",
+          "viewLevel": 2,
+          "target": "productMandatory"
+        },
+        {
+          "pattern": "product/:?query:",
+          "name": "productQuery",
+          "viewLevel": 2,
+          "target": "productQuery"
         },
         {
           "pattern": "product/{id}/details/:detailId:",
           "name": "details",
+          "viewLevel": 3,
           "target": "details"
         }
       ],
       "targets": {
-        "TargetView1": {
+        "TargetMainView": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
           "viewName": "MainView",
-          "viewLevel": 1
+          "viewId": "mainView"
         },
         "settings": {
-          "viewId": "Settings",
-          "viewName": "Settings",
-          "viewLevel": 2
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewName": "Settings"
         },
-        "product": {
-          "viewId": "product",
-          "viewName": "product",
-          "viewLevel": 2
+        "productMandatory": {
+          "viewType": "XML",
+          "viewName": "product"
+        },
+        "productQuery": {
+          "viewType": "XML",
+          "viewName": "product"
         },
         "details": {
-         "viewId": "orderDetails",
-         "viewName": "orderDetails",
-         "viewLevel": 3
+         "viewType": "XML",
+         "viewName": "orderDetails"
        }
       }
     }

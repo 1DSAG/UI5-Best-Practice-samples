@@ -1,19 +1,15 @@
 <mvc:View controllerName="ui5.sandbox.controller.MainView" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
 	xmlns="sap.m">
-	<App id="idAppControl">
-		<pages>
-			<Page title="{i18n>title}">
-				<content>
-					<Button text="Show settings" press=".onNavToSettingsPress"/>
-					<Button text="Product Optional Parameter" press=".onNavToSettingsPress"/>
-					<List headerText="{i18n>ListOfAllProducts}" items="{/Products}">
-						<StandardListItem
-						   title="{ProductID} - {ProductName}"
-						   type="Navigation"
-						   press=".onListItemPressed"/>
-					 </List>
-				</content>
-			</Page>
-		</pages>
-	</App>
+	<Page id="mainView" title="{i18n>title}">
+		<content>
+			<Button text="Show settings" press=".onNavToSettingsPress"/>
+			<Button text="Product Optional Parameter" press=".onNavToSettingsPress"/>
+			<List headerText="{i18n>ListOfAllProducts}" items="{/Products}">
+				<StandardListItem
+					title="{ProductID} - {ProductName}"
+					type="Navigation"
+					press=".onListItemPressed"/>
+				</List>
+		</content>
+	</Page>
 </mvc:View>

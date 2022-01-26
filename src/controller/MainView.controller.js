@@ -15,7 +15,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
       var oContext = oItem.getBindingContext();
       this.getOwnerComponent()
         .getRouter()
-        .navTo("product", {
+        .navTo("productMandatory", {
           productID: oContext.getProperty("ProductID"),
         });
     }

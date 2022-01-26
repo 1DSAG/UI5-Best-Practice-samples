@@ -1,6 +1,6 @@
 <mvc:View controllerName="ui5.sandbox.controller.OrderDetails" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
 	xmlns="sap.m">
-    <Page title="Settings">
+    <Page id="detail" title="Settings">
         <content>
             <VBox >
                 <Text text="OrderID: {OrderID}"></Text>

@@ -1,9 +1,9 @@
 <mvc:View controllerName="ui5.sandbox.controller.Product" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
 	xmlns="sap.m">
-    <Page title="Settings">
+    <Page title="Product">
         <content>
             <Text text="{OrderID}"></Text>
-            <List headerText="{i18n>ListOfAllProducts}" items="{Order_Details}">
+            <List headerText="Orders" items="{Order_Details}">
                 <StandardListItem
                    title="{OrderID} - {ProductID}"
                    type="Navigation"
