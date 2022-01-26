@@ -135,15 +135,15 @@
         },
         "productMandatory": {
           "viewType": "XML",
-          "viewName": "product"
+          "viewName": "Product"
         },
         "productQuery": {
           "viewType": "XML",
-          "viewName": "product"
+          "viewName": "Product"
         },
         "details": {
          "viewType": "XML",
-         "viewName": "orderDetails"
+         "viewName": "OrderDetails"
        }
       }
     }
