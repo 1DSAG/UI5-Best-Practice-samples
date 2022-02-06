@@ -15,13 +15,13 @@
       "id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
       "version": "1.40.12"
     },
-    "dataSources" : {
-      "northwind" : {
+    "dataSources": {
+      "northwind": {
         "uri": "/V2/Northwind/Northwind.svc/",
-		    "type": "OData",
-		    "settings": {
-		      "odataVersion": "2.0"
-		    }
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
       }
     }
   },
@@ -37,8 +37,10 @@
 
   "sap.ui5": {
     "rootView": {
-      "viewName": "ui5.sandbox.view.MainView",
-      "type": "XML"
+			"viewName": "ui5.sandbox.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
     },
     "dependencies": {
       "minUI5Version": "1.92.1",
@@ -65,7 +67,7 @@
       },
       "": {
         "dataSource": "northwind"
-        }
+      }
     },
     "resources": {
       "css": [
@@ -82,23 +84,67 @@
         "async": true,
         "viewPath": "ui5.sandbox.view",
         "controlAggregation": "pages",
-        "controlId": "idAppControl",
+        "controlId": "app",
         "clearControlAggregation": false
       },
       "routes": [
         {
           "name": "RouteView1",
-          "pattern": "RouteView1",
-          "target": ["TargetView1"]
+          "pattern": "",
+          "viewLevel": 1,
+          "target": "TargetMainView"
+        },
+        {
+          "pattern": "settings",
+          "name": "settings",
+          "viewLevel": 2,
+          "target": "settings"
+        },
+        {
+          "pattern": "product/{productID}",
+          "name": "productMandatory",
+          "viewLevel": 2,
+          "target": "productMandatory"
+        },
+        {
+          "pattern": "product/:?query:",
+          "name": "productQuery",
+          "viewLevel": 2,
+          "target": "productQuery"
+        },
+        {
+          "pattern": "product/{id}/details/:detailId:",
+          "name": "details",
+          "viewLevel": 3,
+          "target": "details"
         }
       ],
       "targets": {
-        "TargetView1": {
+        "TargetMainView": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewName": "MainView"
-        }
+          "viewName": "MainView",
+          "viewId": "mainView"
+        },
+        "settings": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewName": "Settings"
+        },
+        "productMandatory": {
+          "viewType": "XML",
+          "viewName": "Product"
+        },
+        "productQuery": {
+          "viewType": "XML",
+          "viewName": "Product"
+        },
+        "details": {
+         "viewType": "XML",
+         "viewName": "OrderDetails"
+       }
       }
     }
   }

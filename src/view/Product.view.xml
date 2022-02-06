@@ -1,0 +1,14 @@
+<mvc:View controllerName="ui5.sandbox.controller.Product" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m">
+    <Page title="Product">
+        <content>
+            <Text text="{OrderID}"></Text>
+            <List headerText="Orders" items="{Order_Details}">
+                <StandardListItem
+                   title="{OrderID} - {ProductID}"
+                   type="Navigation"
+                   press=".onListItemPressed"/>
+             </List>
+        </content>
+    </Page>
+</mvc:View>
